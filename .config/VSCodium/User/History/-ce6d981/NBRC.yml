@@ -1,0 +1,52 @@
+
+env:
+  TERM: alacritty
+
+live_config_reload: true
+
+window:
+
+  columns: 82
+  lines: 25
+
+  padding:
+    x: 12
+    y: 12
+
+  decorations: none
+  startup_mode: Windowed
+  dynamic_title: true
+
+  history: 10000
+  multiplier: 3
+
+  opacity: 1.0
+
+
+cursor:
+  style:
+    shape: Beam
+    blinking: On
+  blink_interval: 525
+  unfocused_hollow: false
+  thickness: 0.10
+
+bell:
+  animation: EaseOutCubic
+  duration: 300
+  color: '#131a18'
+
+shell:
+  program: fish
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+draw_bold_text_with_bright_colors: true

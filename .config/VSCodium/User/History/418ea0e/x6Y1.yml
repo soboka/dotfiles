@@ -1,0 +1,33 @@
+# Font configuration
+font:
+  normal:
+    family: "Liberation Sans"
+    style: Medium
+
+  # Bold font face
+  bold:
+    family: "Liberation Sans"
+    style: Bold
+
+  # Italic font face
+  italic:
+    family: "Liberation Sans"
+    style: Italic
+
+  # Bold italic font face
+  bold_italic:
+    family: "Liberation Sans"
+    style: Bold Italic
+
+  # Point size
+  size: 10
+
+  # Offset
+  #offset:
+  #  x: 0
+  #  y: 0
+
+  # Glyph offset
+  #glyph_offset:
+  #  x: 0
+  #  y: 0

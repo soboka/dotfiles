@@ -1,0 +1,106 @@
+# Basic vars
+set shell sh
+set shellopts '-eu'
+set ifs "\n"
+set scrolloff 10
+set icons
+set period 1
+set cleaner '~/.config/lf/cleaner'
+set previewer '~/.config/lf/previewer'
+set autoquit on
+set drawbox
+set number
+
+## Custom commands
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+cmd zip %zip -r "$f" "$f"
+cmd tar %tar cvf "$f.tar" "$f"
+
+cmd open ${{
+    case $(file --mime-type -Lb $f) in
+        text/*) $EDITOR $fx;;
+        audio/*) mpv --audio-display=no $f ;;
+        video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+        application/pdf|application/vnd*|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
+        *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+# Remove default binding
+map "'"
+map '"'
+map sa
+map sc
+map se
+map sn
+map ss
+map st
+map zh
+map zr
+map zn
+map zs
+map zt
+map za
+map gh
+map e
+map n
+map /
+map i
+map w
+map m
+map p
+map d
+map f
+map y
+map N
+map t
+map q
+
+# Custom binding
+map <enter> shell
+map <esc>   :unselect; clear
+map r reload
+map . set hidden!
+map c clear
+map QQ exit
+
+map DD delete
+map PP paste
+map XX cut
+map CC copy
+map RR rename
+
+map mf mkfile
+map md mkdir
+map au unarchive
+map az zip
+map at tar
+map gb bottom
+map gt top
+
+
+# Bookmark
+map gh cd ~/
+map gc cd ~/.config
+map gq cd ~/.config/qtile

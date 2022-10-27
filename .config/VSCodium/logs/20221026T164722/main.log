@@ -1,0 +1,5 @@
+[2022-10-26 16:47:22.561] [main] [info] update#setState idle
+[2022-10-26 16:47:23.809] [main] [info] Starting extension host with pid 89404 (fork() took 15 ms).
+[2022-10-26 16:47:52.573] [main] [info] update#setState checking for updates
+[2022-10-26 16:47:52.840] [main] [info] update#setState idle
+[2022-10-26 17:42:33.210] [main] [info] Extension host with pid 89404 exited with code: 0, signal: null.

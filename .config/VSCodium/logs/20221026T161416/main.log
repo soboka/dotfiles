@@ -1,0 +1,5 @@
+[2022-10-26 16:14:16.754] [main] [info] update#setState idle
+[2022-10-26 16:14:17.904] [main] [info] Starting extension host with pid 59052 (fork() took 10 ms).
+[2022-10-26 16:14:46.765] [main] [info] update#setState checking for updates
+[2022-10-26 16:14:47.025] [main] [info] update#setState idle
+[2022-10-26 16:35:15.332] [main] [info] Extension host with pid 59052 exited with code: 0, signal: null.

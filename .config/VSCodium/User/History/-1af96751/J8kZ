@@ -1,0 +1,38 @@
+set showmode
+set showcmd         " Show (partial) command in status line.
+set showmatch       " Show matching brackets.
+set ignorecase      " Do case insensitive matching
+set smartcase       " Do smart case matching
+set incsearch       " Incremental search
+set autowrite       " Automatically save before commands like :next and :make
+set hidden          " Hide buffers when they are abandoned
+set mouse=a         " Enable mouse usage (all modes)
+set number          " Show line numbers
+
+set noswapfile      " Don't use swapfile
+set nobackup        " Don't create annoying backup files
+set nowritebackup
+
+syntax on
+
+
+if has('termguicolors')
+    set termguicolors
+endif
+
+set background=dark
+
+let g:everforest_background = 'hard'
+
+colorscheme everforest
+
+let g:airline_theme = 'everforest'
+
+let g:lightline = {}
+let g:lightline.colorscheme = 'everforest'
+
+require'lualine'.setup {
+    options = {
+    theme = 'everforest'
+    }
+}

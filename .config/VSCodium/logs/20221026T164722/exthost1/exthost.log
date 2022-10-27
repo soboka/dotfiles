@@ -1,0 +1,14 @@
+[2022-10-26 16:47:24.348] [exthost] [info] Extension host with pid 89404 started
+[2022-10-26 16:47:24.348] [exthost] [info] Skipping acquiring lock for /home/qtiletester/.config/VSCodium/User/workspaceStorage/38829d8bb963d2749da9d59454d79a51.
+[2022-10-26 16:47:24.495] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: true, activationEvent: '*'
+[2022-10-26 16:47:24.496] [exthost] [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+[2022-10-26 16:47:24.496] [exthost] [info] ExtensionService#_doActivateExtension vscode.ipynb, startup: true, activationEvent: '*'
+[2022-10-26 16:47:24.496] [exthost] [info] ExtensionService#_doActivateExtension naumovs.color-highlight, startup: true, activationEvent: '*'
+[2022-10-26 16:47:24.496] [exthost] [info] ExtensionService#_doActivateExtension sainnhe.everforest, startup: true, activationEvent: '*'
+[2022-10-26 16:47:24.601] [exthost] [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+[2022-10-26 16:47:24.602] [exthost] [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+[2022-10-26 16:47:24.687] [exthost] [info] Eager extensions activated
+[2022-10-26 16:47:24.708] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-26 16:47:24.709] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-26 17:42:33.193] [exthost] [info] Extension host terminating: received terminate message from renderer
+[2022-10-26 17:42:33.197] [exthost] [info] Extension host with pid 89404 exiting with code 0
