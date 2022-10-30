@@ -52,7 +52,7 @@ sudo dnf install -y virt-manager &&
 # qtile from source
 sudo dnf install -y python3-pip python3-cffi python3-xcffib pango wlroots-devel &&
 sudo dnf install -y python3-cairocffi &&
-sudo pip install --no-input qtile &&
+pip install --no-input qtile &&
 sudo echo '[Desktop Entry]' | sudo tee -a /usr/share/xsessions/qtile.desktop &&
 sudo echo 'Name=Qtile' | sudo tee -a /usr/share/xsessions/qtile.desktop &&
 sudo echo 'Comment=Qtile Session' | sudo tee -a /usr/share/xsessions/qtile.desktop &&
