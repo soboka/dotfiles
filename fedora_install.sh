@@ -53,4 +53,4 @@ sudo echo 'Comment=Qtile Session' | sudo tee -a /usr/share/xsessions/qtile.deskt
 sudo echo 'Exec=qtile start' | sudo tee -a /usr/share/xsessions/qtile.desktop &&
 sudo echo 'Type=Application' | sudo tee -a /usr/share/xsessions/qtile.desktop &&
 sudo echo 'Keywords=wm;tiling' | sudo tee -a /usr/share/xsessions/qtile.desktop &&
-sudo chmod +x /usr/share/xsessions/qtile.desktop &&
+sudo chmod +x /usr/share/xsessions/qtile.desktop
