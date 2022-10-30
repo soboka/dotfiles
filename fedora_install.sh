@@ -11,7 +11,7 @@ sudo systemctl enable fstrim.timer &&
 
 # enable rpm fusion free and non-free
 sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm &&
-sudo dnf upgrade --refresh &&
+sudo dnf upgrade -y --refresh &&
 
 # enable flathub
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &&
@@ -24,7 +24,7 @@ sudo dnf install -y vdpauinfo libva-vdpau-driver libva-utils vulkan &&
 
 # install general softwares
 sudo dnf install -y alacritty btop deluge-gtk deadbeef deadbeef-plugins deadbeef-mpris2-plugin discord dunst ffmpegthumbnailer fish flameshot mediainfo mpv neofetch neovim pcmanfm picom qalculate-gtk rofi starship sxiv xed zathura &&
-sudo flatpak install flathub com.bitwarden.desktop com.vscodium.codium &&
+sudo flatpak install -y flathub com.bitwarden.desktop com.vscodium.codium com.github.tchx84.Flatseal && 
 sudo dnf install -y unzip p7zip p7zip-plugins unrar &&
 sudo dnf install -y gimp gimpfx-foundry gmic-gimp gimp-paint-studio krita libreoffice-calc libreoffice-draw libreoffice-langpack-hu libreoffice-writer thunderbird &&
 
@@ -34,8 +34,8 @@ sudo dnf install -y lame* --exclude=lame-devel &&
 sudo dnf group upgrade -y --with-optional Multimedia &&
 
 # for gaming
-sudo dnf install wine lutris steam &&
-sudo flatpak install flathub net.davidotek.pupgui2 com.heroicgameslauncher.hgl &&
+sudo dnf install -y wine lutris steam &&
+sudo flatpak install -y flathub net.davidotek.pupgui2 com.heroicgameslauncher.hgl &&
 
 # kvm virtualization setup
 sudo dnf install -y bridge-utils libvirt virt-install qemu-kvm &&
