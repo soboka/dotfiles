@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# make dirs for my auto mounted storages and I am manualy edit fstab after this
+sudo mkdir /mnt/BarrackHDD /mnt/BarrackHDD2 /mnt/BarrackSSD /mnt/BarrackSSD2 &&
+
 # configure dnf
 sudo echo 'max_parallel_downloads=6' | sudo tee -a /etc/dnf/dnf.conf &&
 sudo echo 'deltarpm=True' | sudo tee -a /etc/dnf/dnf.conf &&
@@ -24,9 +27,12 @@ sudo dnf install -y vdpauinfo libva-vdpau-driver libva-utils vulkan &&
 
 # install general softwares
 sudo dnf install -y alacritty btop deluge-gtk deadbeef deadbeef-plugins deadbeef-mpris2-plugin discord dunst ffmpegthumbnailer fish flameshot mediainfo mpv neofetch neovim pcmanfm picom qalculate-gtk rofi starship sxiv xed zathura &&
-sudo flatpak install -y flathub com.bitwarden.desktop com.vscodium.codium com.github.tchx84.Flatseal && 
+sudo flatpak install -y flathub com.bitwarden.desktop com.vscodium.codium com.github.tchx84.Flatseal org.gnome.FontManager && 
 sudo dnf install -y unzip p7zip p7zip-plugins unrar &&
 sudo dnf install -y gimp gimpfx-foundry gmic-gimp gimp-paint-studio krita libreoffice-calc libreoffice-draw libreoffice-langpack-hu libreoffice-writer thunderbird &&
+sudo dnf config-manager --add-repo https://repo.vivaldi.com/archive/vivaldi-fedora.repo &&
+sudo dnf upgrade -y --refresh &&
+sudo dnf install -y vivaldi-stable &&
 
 # install codecs
 sudo dnf install -y gstreamer1-plugins-{bad-*,good-*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel &&
