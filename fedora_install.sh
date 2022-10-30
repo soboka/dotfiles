@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# Packages
+PKGS='alacritty btop deluge-gtk deadbeef deadbeef-plugins deadbeef-mpris2-plugin discord dunst ffmpegthumbnailer fish flameshot mediainfo mpv neofetch neovim pcmanfm picom qalculate-gtk rofi starship sxiv xed zathura unzip p7zip p7zip-plugins unrar gimp gimpfx-foundry gmic-gimp gimp-paint-studio krita libreoffice-calc libreoffice-draw libreoffice-langpack-hu libreoffice-writer thunderbird'
+NVD='akmod-nvidia xorg-x11-drv-nvidia-cuda vdpauinfo libva-vdpau-driver libva-utils vulkan'
+GME='wine lutris steam'
+VRT='bridge-utils libvirt virt-install qemu-kvm libvirt-devel virt-top libguestfs-tools guestfs-tools'
+FLAT='com.bitwarden.desktop com.vscodium.codium com.github.tchx84.Flatseal org.gnome.FontManager net.davidotek.pupgui2 com.heroicgameslauncher.hgl'
+
 # make dirs for my auto mounted storages and I am manualy edit fstab after this
 sudo mkdir /mnt/BarrackHDD /mnt/BarrackHDD2 /mnt/BarrackSSD /mnt/BarrackSSD2 &&
 
@@ -12,26 +19,16 @@ sudo echo 'defaultyes=True' | sudo tee -a /etc/dnf/dnf.conf &&
 # enable auto trim
 sudo systemctl enable fstrim.timer &&
 
-# enable rpm fusion free and non-free
+# enable rpm fusion free and non-free and vivaldi browser repo
 sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm &&
-sudo dnf upgrade -y --refresh &&
-
-# enable flathub
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &&
-sudo flatpak update &&
-
-# install nvidia
-sudo dnf install -y akmod-nvidia &&
-sudo dnf install -y xorg-x11-drv-nvidia-cuda &&
-sudo dnf install -y vdpauinfo libva-vdpau-driver libva-utils vulkan &&
-
-# install general softwares
-sudo dnf install -y alacritty btop deluge-gtk deadbeef deadbeef-plugins deadbeef-mpris2-plugin discord dunst ffmpegthumbnailer fish flameshot mediainfo mpv neofetch neovim pcmanfm picom qalculate-gtk rofi starship sxiv xed zathura &&
-sudo flatpak install -y flathub com.bitwarden.desktop com.vscodium.codium com.github.tchx84.Flatseal org.gnome.FontManager && 
-sudo dnf install -y unzip p7zip p7zip-plugins unrar &&
-sudo dnf install -y gimp gimpfx-foundry gmic-gimp gimp-paint-studio krita libreoffice-calc libreoffice-draw libreoffice-langpack-hu libreoffice-writer thunderbird &&
 sudo dnf config-manager --add-repo https://repo.vivaldi.com/archive/vivaldi-fedora.repo &&
 sudo dnf upgrade -y --refresh &&
+
+# install nvidia
+sudo dnf install -y $NVD &&
+
+# install general softwares
+sudo dnf install -y $PKGS &&
 sudo dnf install -y vivaldi-stable &&
 
 # install codecs
@@ -40,14 +37,19 @@ sudo dnf install -y lame* --exclude=lame-devel &&
 sudo dnf group upgrade -y --with-optional Multimedia &&
 
 # for gaming
-sudo dnf install -y wine lutris steam &&
-sudo flatpak install -y flathub net.davidotek.pupgui2 com.heroicgameslauncher.hgl &&
+sudo dnf install -y $GME &&
 
 # kvm virtualization setup
-sudo dnf install -y bridge-utils libvirt virt-install qemu-kvm &&
-sudo dnf install -y libvirt-devel virt-top libguestfs-tools guestfs-tools &&
+sudo dnf install -y $VRT &&
 sudo systemctl enable libvirtd &&
 sudo dnf install -y virt-manager &&
+
+# enable flathub
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &&
+sudo flatpak update &&
+
+# softwares from flathub
+sudo flatpak install -y flathub $FLAT && 
 
 # qtile from source
 sudo dnf install -y python3-pip python3-cffi python3-xcffib pango wlroots-devel &&
