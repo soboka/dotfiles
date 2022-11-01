@@ -51,7 +51,7 @@ sudo flatpak update &&
 sudo flatpak install -y flathub $FLAT && 
 
 # qtile from source
-sudo dnf install -y python3-pip python3-cffi python3-xcffib pango wlroots-devel &&
+sudo dnf install -y python3-pip python3-cffi python3-xcffib pango wlroots-devel psutils python3-dbus-next python3-pyxdg &&
 sudo dnf install -y python3-cairocffi &&
 pip install --no-input qtile &&
 sudo echo '[Desktop Entry]' | sudo tee -a /usr/share/xsessions/qtile.desktop &&
