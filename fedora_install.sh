@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Packages
-PKGS='alacritty btop deluge-gtk deadbeef deadbeef-plugins deadbeef-mpris2-plugin discord dunst ffmpegthumbnailer fish flameshot mediainfo mpv neofetch neovim pcmanfm picom qalculate-gtk rofi starship sxiv xed zathura unzip p7zip p7zip-plugins unrar gimp gimpfx-foundry gmic-gimp gimp-paint-studio krita libreoffice-calc libreoffice-draw libreoffice-langpack-hu libreoffice-writer thunderbird vivaldi-stable'
+PKGS='alacritty btop deluge-gtk deadbeef deadbeef-plugins deadbeef-mpris2-plugin discord dunst exa ffmpegthumbnailer fish flameshot mediainfo mpv neofetch neovim pcmanfm picom qalculate-gtk rofi starship sxiv xed zathura unzip p7zip p7zip-plugins unrar gimp gimpfx-foundry gmic-gimp gimp-paint-studio krita libreoffice-calc libreoffice-draw libreoffice-langpack-hu libreoffice-writer thunderbird vivaldi-stable'
 NVD='akmod-nvidia xorg-x11-drv-nvidia-cuda vdpauinfo libva-vdpau-driver libva-utils vulkan'
 GME='wine lutris steam'
 VRT='bridge-utils libvirt virt-install qemu-kvm libvirt-devel virt-top libguestfs-tools guestfs-tools'
@@ -9,7 +9,7 @@ FLAT='com.bitwarden.desktop com.vscodium.codium com.github.tchx84.Flatseal org.g
 
 # make dirs for my auto mounted storages and I am manualy edit fstab after this
 sudo mkdir /mnt/BarrackHDD /mnt/BarrackHDD2 /mnt/BarrackSSD /mnt/BarrackSSD2 &&
-echo "All storage dir created." &&
+echo "All storage directories created." &&
 
 # configure dnf
 sudo echo 'max_parallel_downloads=6' | sudo tee -a /etc/dnf/dnf.conf &&
