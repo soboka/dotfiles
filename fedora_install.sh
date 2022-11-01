@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# It's a simple script to pre config a freshly installed fedora i3 distro with all my stuff and with my qtile wm.
+
 # Packages
 PKGS='alacritty btop deluge-gtk deadbeef deadbeef-plugins deadbeef-mpris2-plugin discord dunst exa ffmpegthumbnailer fish flameshot mediainfo mpv neofetch neovim pcmanfm picom qalculate-gtk rofi starship sxiv xed zathura unzip p7zip p7zip-plugins unrar gimp gimpfx-foundry gmic-gimp gimp-paint-studio krita libreoffice-calc libreoffice-draw libreoffice-langpack-hu libreoffice-writer thunderbird vivaldi-stable'
 NVD='akmod-nvidia xorg-x11-drv-nvidia-cuda vdpauinfo libva-vdpau-driver libva-utils vulkan'
