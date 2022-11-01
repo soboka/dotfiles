@@ -29,29 +29,29 @@ echo "All repositories added." &&
 
 # install nvidia
 sudo dnf install -y $NVD &&
-echo "Nvidia drivers installed." &&
+echo "Nvidia drivers installation finished." &&
 
 # install general softwares
 sudo dnf install -y $PKGS &&
 # Somehow vivaldi make duplicate repo so we remove one
 sudo rm /etc/yum.repos.d/vivaldi-fedora.repo &&
-echo "All package installed." &&
+echo "All package installation finished." &&
 
 # install codecs
 sudo dnf install -y gstreamer1-plugins-{bad-*,good-*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel &&
 sudo dnf install -y lame* --exclude=lame-devel &&
 sudo dnf group upgrade -y --with-optional Multimedia &&
-echo "All codecs installed." &&
+echo "All codecs installation finished." &&
 
 # for gaming
 sudo dnf install -y $GME &&
-echo "All gaming stuff installed." &&
+echo "All gaming stuff installation finished." &&
 
 # kvm virtualization setup
 sudo dnf install -y $VRT &&
 sudo systemctl enable libvirtd &&
 sudo dnf install -y virt-manager &&
-echo "All virtualization stuff installed." &&
+echo "All virtualization stuff installation finished." &&
 
 # enable flathub
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &&
@@ -59,7 +59,7 @@ sudo flatpak update &&
 
 # softwares from flathub
 sudo flatpak install -y flathub $FLAT && 
-echo "Flathub enabled and all flatpak installed." &&
+echo "Flathub enabled and all flatpak installation finished." &&
 
 # qtile from source
 #sudo dnf install -y python3-pip python3-cffi python3-xcffib pango wlroots-devel psutils python3-dbus-next python3-pyxdg &&
@@ -75,8 +75,10 @@ echo "Flathub enabled and all flatpak installed." &&
 sudo dnf copr enable frostyx/qtile &&
 sudo dnf install qtile &&
 sudo dnf install qtile-extras &&
-echo "Qtile installed." &&
+echo "Qtile installation finished." &&
 
 # Notification
-notify-send "All Installation and configuration is done" && 
-echo "All Installation and configuration is done"
+notify-send "All Installation and configuration is done." && 
+echo "All Installation and configuration is done."
+echo "You need to reboot the computer."
+
