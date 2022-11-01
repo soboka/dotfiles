@@ -1,0 +1,6 @@
+# NOT FINISHED
+
+PKGS='alacritty btop deluge-gtk discord dunst exa ffmpegthumbnailer fish flameshot mediainfo mpv neofetch neovim pcmanfm picom qalculate-gtk rofi starship sxiv xed zathura zathura-pdf-poppler playerctl unzip p7zip unrar gimp gimp-plugin-gmic krita krita-plugin-gmic libreoffice-fresh thunderbird vivaldi-stable vivaldi-ffmpeg-codecs'
+
+PKAR='deadbeef deadbeef-mpris2-plugin-git deadbeef-pipewire-plugin-git heroic-games-launcher'
+GME='wine lutris steam'
