@@ -110,3 +110,7 @@ map sn set info
 map gh cd ~/
 map gc cd ~/.config
 map gq cd ~/.config/qtile
+map ga cd /mnt/BarrackHDD/Videos/Anime
+map gv cd /mnt/BarrackHDD/Videos/Movies_and_Series
+map gd cd /mnt/BarrackHDD/Downloads
+map gD cd /mnt/BarrackHDD/Documents
