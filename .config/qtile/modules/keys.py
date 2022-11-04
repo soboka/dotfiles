@@ -84,6 +84,10 @@ keys = [
     Key([], "XF86AudioPrev",lazy.spawn("playerctl previous"), 
         desc="Previous media"),
 
+    # Keyboard layout switch
+    Key([alt], "Space",lazy.spawn(os.path.expanduser("~/.config/qtile/scripts/klayout_switch.sh")), 
+        desc="Change keyboard layout."),
+    
     # Screenshot
     Key([], "Print", lazy.spawn("flameshot screen"), 
         desc="Take a screenshot"),
