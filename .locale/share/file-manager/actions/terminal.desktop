@@ -8,5 +8,5 @@ Icon=utilities-terminal
 
 [X-Action-Profile profile-one]
 MimeTypes=inode/directory;
-Exec=kitty -w %f
+Exec=alacritty -w %f
 Name=Default profile
