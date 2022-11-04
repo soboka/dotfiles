@@ -10,7 +10,7 @@ UR='\033[0;31m'
 # Packages
 PKGS='alacritty btop deluge-gtk deadbeef deadbeef-plugins deadbeef-mpris2-plugin discord dunst exa ffmpegthumbnailer fish flameshot mediainfo mpv neofetch neovim pcmanfm picom qalculate-gtk rofi starship sxiv xed zathura zathura-pdf-poppler zathura-plugins-all unzip p7zip p7zip-plugins unrar gimp gimpfx-foundry gmic-gimp gimp-paint-studio krita libreoffice-calc libreoffice-draw libreoffice-langpack-hu libreoffice-writer thunderbird vivaldi-stable playerctl python3-psutil'
 NVD='akmod-nvidia xorg-x11-drv-nvidia-cuda vdpauinfo libva-vdpau-driver libva-utils vulkan'
-GME='wine lutris steam'
+GME='wine gamemode lutris steam'
 VRT='bridge-utils libvirt virt-install qemu-kvm libvirt-devel virt-top libguestfs-tools guestfs-tools'
 FLAT='com.bitwarden.desktop com.vscodium.codium com.github.tchx84.Flatseal org.gnome.FontManager net.davidotek.pupgui2 com.heroicgameslauncher.hgl'
 
@@ -69,7 +69,7 @@ cd ~/Git/pamixer &&
 meson setup build &&
 meson compile -C build &&
 sudo meson install -C build &&
-cd ~ &&
+cd /$HOME &&
 echo -e "${CL}###### Pamixer compilation and installation finished. ######${NCL}" &&
 
 # enable flathub
@@ -95,6 +95,13 @@ sudo dnf copr enable -y frostyx/qtile &&
 sudo dnf install -y qtile &&
 sudo dnf install -y qtile-extras &&
 echo -e "${CL}###### Qtile installation finished. ######${NCL}" &&
+
+# patched kernel
+sudo dnf copr enable -y sentry/kernel-fsync &&
+sudo dnf update -y --refresh &&
+echo -e "${CL}###### If you don't want the normal fedora kernel than ######" &&
+echo -e "${CL}###### edit /etc/yum.repos.d/fedora-updates.repo and add ######" &&
+echo -e "${CL}###### exclude=kernel* to the bottom of the [updates] section. ######" &&
 
 # END Notification
 notify-send "All Installation and configuration is done." && 
