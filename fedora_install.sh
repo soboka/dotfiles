@@ -8,7 +8,7 @@ NCL='\033[0m'
 UR='\033[0;31m'
 
 # Packages
-PKGS='alacritty btop deluge-gtk deadbeef deadbeef-plugins deadbeef-mpris2-plugin discord dunst exa ffmpegthumbnailer fish flameshot mediainfo mpv neofetch neovim pcmanfm picom qalculate-gtk rofi starship sxiv xed zathura zathura-pdf-poppler zathura-plugins-all unzip p7zip p7zip-plugins unrar gimp gimpfx-foundry gmic-gimp gimp-paint-studio krita libreoffice-calc libreoffice-draw libreoffice-langpack-hu libreoffice-writer thunderbird vivaldi-stable playerctl python3-psutil polkit-gnome file-roller'
+PKGS='alacritty btop deluge-gtk deadbeef deadbeef-plugins deadbeef-mpris2-plugin discord dunst exa ffmpegthumbnailer fish flameshot mediainfo mpv neofetch neovim pcmanfm picom qalculate-gtk rofi starship sxiv xed zathura zathura-pdf-poppler zathura-plugins-all unzip p7zip p7zip-plugins unrar gimp gimpfx-foundry gmic-gimp gimp-paint-studio krita libreoffice-calc libreoffice-draw libreoffice-langpack-hu libreoffice-writer thunderbird vivaldi-stable playerctl python3-psutil polkit-gnome file-roller python3-pip'
 NVD='akmod-nvidia xorg-x11-drv-nvidia-cuda vdpauinfo libva-vdpau-driver libva-utils vulkan'
 GME='wine gamemode lutris steam'
 VRT='bridge-utils libvirt virt-install qemu-kvm libvirt-devel virt-top libguestfs-tools guestfs-tools'
@@ -71,6 +71,11 @@ meson compile -C build &&
 sudo meson install -C build &&
 cd /$HOME &&
 echo -e "${CL}###### Pamixer compilation and installation finished. ######${NCL}" &&
+
+# ueberzug
+sudo dnf install -y libX11-devel.x86_64 libXext-devel libXxf86vm-devel python3-devel &&
+pip install --no-input ueberzug &&
+echo -e "${CL}###### Ueberzug installation finished. ######${NCL}" &&
 
 # enable flathub
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &&
