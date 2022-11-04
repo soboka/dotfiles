@@ -101,7 +101,7 @@ sudo dnf copr enable -y sentry/kernel-fsync &&
 sudo dnf update -y --refresh &&
 echo -e "${CL}###### If you don't want the normal fedora kernel than ######" &&
 echo -e "###### edit /etc/yum.repos.d/fedora-updates.repo and add ######" &&
-echo -e "###### exclude=kernel* to the bottom of the [updates] section. ######${NCL}" &&
+echo -e '###### "exclude=kernel*" to the bottom of the [updates] section. ######${NCL}' &&
 
 # END Notification
 notify-send "All Installation and configuration is done." && 
