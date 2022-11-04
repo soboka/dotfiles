@@ -1,0 +1,21 @@
+#browser.linux .window-buttongroup {
+    right: 0px !important;
+    top: 0px !important;
+}
+#browser .window-buttongroup {
+    height: 0px !important;
+    margin-top: 0px !important;
+    margin-right: 0px !important;
+}
+#browser .window-buttongroup button {
+    height:0px !important;
+    width: 0px !important;
+    margin-left: 0px !important;
+
+ }
+#browser.linux .window-buttongroup button.window-minimize svg path,
+#browser.linux .window-buttongroup button.window-maximize svg path,
+#browser.linux .window-buttongroup button.window-restore svg path,
+#browser.linux .window-buttongroup button.window-close svg path {
+    display: none;
+}
